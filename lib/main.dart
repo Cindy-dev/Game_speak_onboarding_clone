@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:game_speak_onboarding/screens/get_started.dart';
 import 'package:game_speak_onboarding/screens/signup_screen.dart';
+import 'package:game_speak_onboarding/screens/verify_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       
-      home: Signup(),
+      home: GetStarted(),
     );
   }
 }

@@ -1,44 +1,63 @@
 import 'package:flutter/material.dart';
 
-class Signup extends StatefulWidget {
-  const Signup({Key key}) : super(key: key);
+class GetStarted extends StatefulWidget {
+  const GetStarted({Key key}) : super(key: key);
 
   @override
-  _SignupState createState() => _SignupState();
+  State<GetStarted> createState() => _GetStartedState();
 }
 
-class _SignupState extends State<Signup> {
+class _GetStartedState extends State<GetStarted> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Column(
         children: [
-          Spacer(
-            flex: 1,
-          ),
+          Spacer(flex: 2),
           Container(
             alignment: Alignment.centerLeft,
             padding: const EdgeInsets.fromLTRB(20, 30, 10, 0),
-            child: Text('GET STARTED FOR FREE',
+            child: Text('SET UP YOUR ACCOUNT',
                 style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600)),
           ),
           Container(
             alignment: Alignment.centerLeft,
             padding: const EdgeInsets.fromLTRB(20, 5, 10, 0),
-            child: Text('Create new account',
+            child: Text('Now let\'s setup your\naccount',
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
           ),
           Container(
             alignment: Alignment.centerLeft,
             padding: const EdgeInsets.fromLTRB(20, 5, 10, 0),
+            child: Text(
+                'We just need a little more information to\nsetup your account?',
+                style: TextStyle(fontSize: 15)),
+          ),
+          Spacer(),
+          Container(
+            alignment: Alignment.centerLeft,
+            padding: const EdgeInsets.fromLTRB(20, 5, 10, 0),
             child: Row(
               children: [
-                Text('Already a new member?', style: TextStyle(fontSize: 15)),
-                Text('Log In',
+                CircleAvatar(
+                  radius: 50.5,
+                  backgroundColor: Colors.grey.shade300,
+                  child: Icon(
+                    Icons.camera_alt,
+                    color: Colors.black,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Text(
+                    'Upload Photo',
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                        color: Color.fromRGBO(255, 69, 0, 10)))
+                      decoration: TextDecoration.underline,
+                      decorationStyle: TextDecorationStyle.double,
+                    ),
+                  ),
+                )
               ],
             ),
           ),
@@ -47,7 +66,7 @@ class _SignupState extends State<Signup> {
             child: TextFormField(
                 cursorColor: Colors.black,
                 decoration: InputDecoration(
-                    labelText: 'First Name',
+                    labelText: 'USERNAME',
                     labelStyle: TextStyle(color: Colors.black45, fontSize: 15),
                     suffixIcon: Icon(
                       Icons.person,
@@ -71,10 +90,11 @@ class _SignupState extends State<Signup> {
             child: TextFormField(
                 cursorColor: Colors.black,
                 decoration: InputDecoration(
-                    labelText: 'Last Name',
+                    labelText: 'DATE OF BIRTH',
+                    hintText: 'DD - MM - YYYY',
                     labelStyle: TextStyle(color: Colors.black45, fontSize: 15),
                     suffixIcon: Icon(
-                      Icons.person,
+                      Icons.calendar_today,
                       color: Colors.black,
                     ),
                     focusedBorder: OutlineInputBorder(
@@ -95,39 +115,14 @@ class _SignupState extends State<Signup> {
             child: TextFormField(
                 cursorColor: Colors.black,
                 decoration: InputDecoration(
-                    labelText: 'Email Address',
+                    labelText: 'PHONE NUMBERS',
                     labelStyle: TextStyle(color: Colors.black45, fontSize: 15),
                     suffixIcon: Icon(
-                      Icons.email,
+                      Icons.phone,
                       color: Colors.black,
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
-                      borderSide: BorderSide(
-                        color: Color.fromRGBO(255, 69, 0, 10),
-                      ),
-                    ),
-                    fillColor: Colors.grey.shade300,
-                    filled: true,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                      borderSide: BorderSide.none,
-                    ))),
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(20, 15, 20, 0),
-            child: TextFormField(
-                obscureText: true,
-                cursorColor: Colors.black,
-                decoration: InputDecoration(
-                    labelText: 'Password',
-                    labelStyle: TextStyle(color: Colors.black45, fontSize: 15),
-                    suffixIcon: Icon(
-                      Icons.remove_red_eye,
-                      color: Colors.black,
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(7),
                       borderSide: BorderSide(
                         color: Color.fromRGBO(255, 69, 0, 10),
                       ),
@@ -151,7 +146,7 @@ class _SignupState extends State<Signup> {
                   color: Color.fromRGBO(255, 69, 0, 10),
                   borderRadius: BorderRadius.circular(15)),
               child: Text(
-                'Create Account',
+                'Continue',
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 15,
@@ -160,7 +155,7 @@ class _SignupState extends State<Signup> {
             ),
           ),
           Spacer(
-            flex: 2,
+            flex: 3,
           ),
         ],
       ),
